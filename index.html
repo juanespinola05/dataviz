@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dataviz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="w-screen overflow-x-hidden clash-display bg-black">
+  <section>
+    <video muted autoplay loop class="w-full" src="assets/hero.webm"></video>
+    <div class="h-14 bg-black"></div>
+  </section>
+  <nav class="sticky z-20 top-0">
+    <ul class="h-24 grid grid-cols-4 text-3xl text-white font-[600] italic">
+      <li class="grid place-items-center bg-blue">1990</li>
+      <li class="grid place-items-center bg-red">2000</li>
+      <li class="grid place-items-center text-black bg-aquamarine">2010</li>
+      <li class="grid place-items-center text-black bg-yellow">2020</li>
+    </ul>
+  </nav>
+  <section id="main">
+    <div>
+      <div id="content-container" class="text-white min-h-[calc(100vh_-_5rem)] py-24">
+        <div id="main-content" class="w-[86%] mx-auto flex gap-24">
+          <div class="max-w-[55%]">
+            <h2 class="uppercase italic font-[600] text-[5rem] mt-4 mb-20 leading-[90px]"><br></h2>
+            <p id="description" class="text-xl leading-tight"></p>
+          </div>
+          <div>
+            <div>
+              <p class="italic font-thin text-3xl">Escudería predominante</p>
+              <p id="team" class="font-bold text-3xl mt-2 italic"></p>
+            </div>
+            <div class="mt-20 h-full relative">
+              <img
+                id="team-logo"
+                src=""
+                alt="Williams"
+                class="w-72"
+              >
+              <img
+                id="main-image"
+                src=""
+                alt="1990 Williams"
+                class="absolute w-[700px] -right-[400px] bottom-32 max-w-min"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img id="pilot-banner" src="" alt="" class="w-[90%] mx-auto">
+      </div>
+      <div class="w-[90%] mx-auto">
+        <iframe title="1990" aria-label="Table" id="datawrapper-chart-kDbBw" src="https://datawrapper.dwcdn.net/L87jf/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="301" data- external="1"></iframe>
+    </div>
+  </section>
+  <section id="flow-section" class="text-white w-[80%] mx-auto pt-32">
+    <h2 id="flow-title" class="uppercase italic font-[600] text-6xl mt-4 mb-16 leading-[90px] "></h2>
+    <p id="flow-text" class="text-white text-xl leading-tight max-w-3xl mb-24">Evolución tecnológica de los autos de F1 a través de los años</p>
+    <div data-id="1990" class="flourish-embed flourish-chart" data-src="visualisation/20570741">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript>
+        <img src="https://public.flourish.studio/visualisation/20570741/thumbnail" width="100%" alt="chart visualization" />
+      </noscript>
+    </div>
+    <div data-id="2000" class="flourish-embed flourish-chart" data-src="visualisation/20571933">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript>
+        <img src="https://public.flourish.studio/visualisation/20571933/thumbnail" width="100%" alt="chart visualization" />
+      </noscript>
+    </div>
+    <div data-id="2010" class="flourish-embed flourish-chart" data-src="visualisation/20609536">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript>
+        <img src="https://public.flourish.studio/visualisation/20609536/thumbnail" width="100%" alt="chart visualization" />
+      </noscript>
+    </div>
+    <div data-id="2020" class="flourish-embed flourish-chart" data-src="visualisation/20609708">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript>
+        <img src="https://public.flourish.studio/visualisation/20609708/thumbnail" width="100%" alt="chart visualization" />
+      </noscript>
+    </div>
+  </section>
+  <section id="car-section" class="text-white w-[80%] mx-auto pt-40">
+    <h2 id="car-title" class="uppercase italic font-[600] text-6xl mt-4 mb-16 leading-[90px] max-w-2xl">
+    </h2>
+    <p class="text-white"></p>
+    <div id="car-blank" class="bg-red-500"></div>
+    <video
+      id="car-video"
+      class="left-0 mix-blend-lighten max-w-6xl mx-auto right-0"
+      src="assets/car.webm"
+      muted
+      autoplay
+      loop
+    ></video>
+    <div class="car-table" id="table-1990">
+      <iframe title="1990" aria-label="Table" id="datawrapper-chart-8WMhW" src="https://datawrapper.dwcdn.net/8WMhW/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="277" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+    </script>
+    </div>
+    <div class="car-table" id="table-2000">
+      <iframe title="2000" aria-label="Table" id="datawrapper-chart-gEOiu" src="https://datawrapper.dwcdn.net/gEOiu/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="277" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+      </script>
+    </div>
+    <div class="car-table" id="table-2010">
+      <iframe title="2010" aria-label="Table" id="datawrapper-chart-SHws2" src="https://datawrapper.dwcdn.net/SHws2/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="277" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+      </script>
+    </div>
+    <div class="car-table" id="table-2020">
+      <iframe title="2020" aria-label="Table" id="datawrapper-chart-xal4O" src="https://datawrapper.dwcdn.net/xal4O/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="277" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+      </script>
+    </div>
+                
+    <div id="car-trigger" class="mt-6"></div>
+    <div id="set-height"></div>
+    <div id="car-trigger-stop"></div>
+  </section>
+  <section>
+    <img src="assets/franco-1.png" alt="" class="w-full">
+    <div class="mt-8 text-white w-[85%] mx-auto">
+      <div class="grid grid-cols-5 gap-16">
+        <div class="col-span-3 flex flex-col justify-end">
+          <img src="assets/promesa-arg.png" alt="" class="w-full">
+          <p>Franco Colapinto, nacido el 27 de mayo de 2003 en Pilar, Argentina, es la nueva
+            promesa del automovilismo argentino. Con una carrera forjada desde los karts y
+            destacadas actuaciones en categorías como la Fórmula 4 Española, la Fórmula
+            Regional Europea y la Fórmula 3, Colapinto ha demostrado ser un piloto de
+            talento excepcional. Su estilo de manejo audaz, combinado con una inteligencia
+            estratégica en pista, lo ha llevado a ganarse un lugar en la Fórmula 1, marcando
+            un hito histórico para el automovilismo argentino tras décadas de espera. Como
+            piloto de Williams Racing, Colapinto representa no solo el renacimiento de
+            Argentina en la máxima categoría, sino también la esperanza de ver nuevamente
+            a un compatriota luchar por la gloria en los circuitos más exigentes del mundo.</p>
+        </div>
+        <div class="col-span-2">
+          <img src="assets/franco-solo.png" alt="" >
+        </div>
+      </div>
+    </div>
+    <div class="text-white w-[85%] mx-auto mt-32">
+      <h2 class="uppercase italic font-[600] text-6xl mt-4 mb-16 leading-[60px] max-w-3xl">
+      El sueño Argentino <br> en la Formula 1</h2>
+      <p class="text-xl leading-tight max-w-3xl">
+        Franco ha sorprendido al mundo con su reciente ascenso hacia la Fórmula 1, pero este logro no es casualidad. Esta línea de tiempo muestra las diferentes categorías en las que compitió a lo largo de su carrera, demostrando una dedicación incansable y un progreso constante. Aunque para muchos su llegada a la cúspide pueda parecer inesperada, es el resultado de años de esfuerzo, aprendizaje y una pasión inquebrantable por el deporte. Su historia es un testimonio de lo que puede lograrse con trabajo duro y determinación.
+      </p>
+      <div data-id="colapinto" class="flourish-embed flourish-gantt mt-20" data-src="visualisation/20572938">
+        <script src="https://public.flourish.studio/resources/embed.js"></script>
+        <noscript>
+          <img src="https://public.flourish.studio/visualisation/20572938/thumbnail" width="100%" alt="gantt visualization" />
+        </noscript>
+      </div>
+    </div>
+    <div class="mt-20">
+      <p class="italic text-white text-4xl font-medium text-center max-w-2xl mx-auto">
+        El futuro ya acelera en el horizonte, y Franco Colapinto está listo para dejar su huella en la historia del automovilismo. <b>¿Será su nombre el próximo en unirse a la elite de las leyendas eternas?</b>
+      </p>
+      <img src="assets/auto-franco.png" class="w-[85%] mt-32" alt="">
+    </div>
+  </section>
+    <!-- <p class="py-96"></p> -->
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/scroll-frames.js"></script>
+  <script type="text/javascript">!function(){"use strict"; window.addEventListener("message", (function(a){if(void 0!==a.data["datawrapper- height"]){var e=document.querySelectorAll("iframe"); for(var t in a.data["datawrapper- height"]) for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();</script>
+</body>
+
+</html>
