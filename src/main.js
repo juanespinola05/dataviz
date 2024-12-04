@@ -152,6 +152,7 @@ navItems.forEach((item) => {
     if (year !== activeTab) {
       changeTab(year)
     }
+    document.getElementById('main').scrollIntoView({ behavior: 'smooth' })
   })
 })
 changeTab(1990)
