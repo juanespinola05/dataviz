@@ -1,8 +1,9 @@
 import './style.css'
 import './clash-display.css'
 import 'https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js'
+import 'https://unpkg.com/scrollreveal'
 
-const { animate } = Motion
+const { animate, inView } = Motion
 
 const FLOWCHART_EMBED = `
 <script src="https://public.flourish.studio/resources/embed.js"></script>
@@ -92,7 +93,7 @@ const carTitle = document.querySelector('#car-title')
 const carVideo = document.querySelector('#car-video')
 const flowTitle = document.querySelector('#flow-title')
 const flowText = document.querySelector('#flow-text')
-const flowChart = document.querySelector('#flow-chart')
+const sectionFranco = document.querySelector('#franco')
 
 let activeTab = '1990'
 
@@ -109,8 +110,7 @@ function changeTab (year) {
     datawrapperId: newDatawrapperId,
     carTitle: newCarTitle,
     flowChartTitle: newFlowTitle,
-    flowChartText: newFlowText,
-    flowChartId: newFlowChartId
+    flowChartText: newFlowText
   } = tabs[year]
 
   animate(contentContainer, { backgroundColor: bgColor }, { duration: 0.2 })
@@ -129,6 +129,12 @@ function changeTab (year) {
       flowTitle.textContent = newFlowTitle
       flowText.textContent = newFlowText
       toggleFlowChart(year)
+      if (year === '2020') {
+        sectionFranco.style.display = 'block'
+      } else {
+        sectionFranco.style.display = 'none'
+      }
+      // textScroll(document.querySelector('#flow-title'))
 
       animate(section.querySelector('#main-content'), { x: '-100%', opacity: 0 })
       animate(section.querySelector('#main-content'), { x: '0', opacity: 1 }, { duration: 0.2 })
@@ -251,3 +257,166 @@ function toggleFlowChart (year) {
     table.style.display = table.getAttribute('id').includes(year) ? 'block' : 'none'
   })
 }
+
+// function textScroll (el) {
+//   const originalText = el.innerHTML
+
+//   el.innerHTML = originalText.substring(0, 12) + '...'
+
+//   let lastScrollY = 0
+//   let ticking = false
+
+//   const type = function (scroll) {
+//     el.innerHTML = originalText.substring(0, 12 + scroll)
+//   }
+
+//   const update = function () {
+//     type((lastScrollY / 2))
+//     ticking = false
+//   }
+
+//   const requestTick = function () {
+//     if (!ticking) {
+//       window.requestAnimationFrame(update)
+//       ticking = true
+//     }
+//   }
+
+//   const onScroll = function () {
+//     const rect = el.getBoundingClientRect()
+//     if (window.scrollY < rect.top) return
+//     lastScrollY = window.scrollY - el.scrollTop
+//     requestTick()
+//   }
+
+//   const observer = new IntersectionObserver(
+//     (entries) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           window.addEventListener('scroll', onScroll, false)
+//         } else {
+//           window.removeEventListener('scroll', onScroll, false)
+//         }
+//       })
+//     },
+//     {
+//       root: null,
+//       threshold: 1.0
+//     }
+//   )
+//   observer.observe(el)
+// }
+const ps = document.querySelectorAll('.escuderia-animation p')
+ScrollReveal().reveal(ps[0], {
+  reset: true,
+  delay: 200,
+  distance: '150%',
+  origin: 'bottom',
+  opacity: null
+})
+ScrollReveal().reveal('#team', {
+  reset: true,
+  delay: 200,
+  distance: '150%',
+  origin: 'bottom'
+  // opacity: null
+})
+
+ScrollReveal().reveal(title, {
+  reset: true,
+  delay: 300,
+  distance: '150%',
+  origin: 'bottom'
+  // opacity: null
+})
+
+ScrollReveal().reveal([description, logoImage], {
+  reset: true,
+  delay: 300
+  // distance: '150%',
+  // origin: 'bottom'
+})
+ScrollReveal().reveal([mainImage], {
+  reset: true,
+  delay: 500,
+  distance: '250%',
+  origin: 'right'
+})
+
+inView([carTitle, carVideo],
+  (info) => {
+    const animation = animate(info.target, { opacity: 1, x: [-500, 0] }, { duration: 0.6 })
+    // This will fire when the element leaves the viewport
+    return (leaveInfo) => animation.stop()
+  },
+  { margin: '1000px 0px 0px 0px' }
+)
+
+inView('.car-table',
+  (info) => {
+    const animation = animate(info.target, { opacity: [0, 1], y: [-100, 0] }, { duration: 0.6 })
+    // This will fire when the element leaves the viewport
+    return (leaveInfo) => animation.stop()
+  },
+  { margin: '1000px 0px 0px 0px' }
+)
+inView('#colapinto-img1',
+  (info) => {
+    const animation = animate(info.target, { opacity: [0, 1] }, { delay: 0.2, duration: 1.2 })
+    // This will fire when the element leaves the viewport
+    return (leaveInfo) => animation.stop()
+  },
+  { margin: '1200px 0px 0px 0px' }
+)
+
+inView('#promesa-section',
+  (info) => {
+    const animation = animate(info.target, { opacity: [0, 1], x: [-500, 0] }, { delay: 0.2, duration: 1.2 })
+    // This will fire when the element leaves the viewport
+    return (leaveInfo) => animation.stop()
+  },
+  { margin: '1200px 0px 0px 0px' }
+)
+
+inView('#dream h2, #dream p',
+  (info) => {
+    const animation = animate(info.target, { opacity: [0, 1], y: [100, 0] }, { delay: 0.1, duration: 0.8 })
+    // This will fire when the element leaves the viewport
+    return (leaveInfo) => animation.stop()
+  },
+  { margin: '1200px 0px 0px 0px' }
+)
+inView('#footer p, #flow-title, #flow-text',
+  (info) => {
+    const animation = animate(info.target, { opacity: [0, 1] }, { delay: 0.2, duration: 1.5 })
+    // This will fire when the element leaves the viewport
+    return (leaveInfo) => animation.stop()
+  },
+  { margin: '1200px 0px 0px 0px' }
+)
+
+inView('#footer img',
+  (info) => {
+    const animation = animate(info.target, { opacity: [0, 1], x: [-500, 0] }, { delay: 0.2, duration: 1.2 })
+    // This will fire when the element leaves the viewport
+    return (leaveInfo) => animation.stop()
+  },
+  { margin: '1200px 0px 0px 0px' }
+)
+inView('.flourish-embed',
+  (info) => {
+    const animation = animate(info.target, { opacity: [0, 1], y: [-100, 0] }, { delay: 0.2, duration: 1.2 })
+    // This will fire when the element leaves the viewport
+    return (leaveInfo) => animation.stop()
+  },
+  { margin: '1200px 0px 0px 0px' }
+)
+
+inView('#pilot-banner, #pilot-chart',
+  (info) => {
+    const animation = animate(info.target, { opacity: [0, 1], x: [500, 0] }, { delay: 0.2, duration: 1 })
+    // This will fire when the element leaves the viewport
+    return (leaveInfo) => animation.stop()
+  },
+  { margin: '1200px 0px 0px 0px' }
+)
